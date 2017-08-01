@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/input_pkg"
+        android:hint="请输入App包名，计算签名信息"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/signature"
+        android:layout_below="@id/input_pkg"
+        android:onClick="onGetSignature"
+        android:text="计算"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:id="@+id/input_pkg_get_token"
+        android:layout_below="@id/signature"
+        android:hint="请输入目标包名，获得Token信息"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="match_parent"
+        android:id="@+id/getToken"
+        android:layout_below="@id/input_pkg_get_token"
+        android:onClick="onGetToekn"
+        android:text="获取Token"
+        android:layout_height="wrap_content" />
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:text="是否安全加密"
+        android:layout_below="@id/getToken"
+        android:checked="true"
+        android:id="@+id/checkbox_s"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:id="@+id/console_info"
+        android:textIsSelectable="true"
+        android:layout_below="@id/checkbox_s"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
