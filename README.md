@@ -1,2 +1,2 @@
 # oauth-Android-sdk
-华米Android版授权SDK开发资料
+华米授权SDK开发资料
