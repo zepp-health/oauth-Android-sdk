@@ -65,6 +65,10 @@ mOpenAuthorize.startGetAccessToken(activity);
 ===
 请安装输入App包名信息，点击计算。
 
+SDK开发资料
+===
+[资料下载](https://github.com/liutz/oauth-Android-sdk)
+
 更多OAuth资料？
 ===
 https://github.com/huamitech/rest-api/wiki
