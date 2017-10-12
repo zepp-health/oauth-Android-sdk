@@ -1,19 +1,19 @@
 快速开始
 ===
-1) 在应用的AndroidManifest.xml里添加以下配置：
+##### 1) 在应用的AndroidManifest.xml里添加以下配置：
 
 ```
 <uses-permission android:name="android.permission.INTERNET" />
 ```
 
-2) 获取AccessToken
+##### 2) 获取AccessToken
 
 ```
 // 参数解释：
-// APP_ID和APP_KEY开发者预先申请好
+// APP_ID开发者预先申请好
 // 1.创建OpenAuthorize对象
 mOpenAuthorize = new OpenAuthorize(context)
-    .secretEnable(true) // 是否安全加密
+    .secretEnable(false) // 是否安全加密,一般选择false即可
     .setAppId(APP_ID)
     .setAuthCallback(new Callback<AuthResults>() {
         @Override
@@ -63,7 +63,16 @@ mOpenAuthorize.startGetAccessToken(activity);
 
 如何获取APK签名信息
 ===
-请安装输入App包名信息，点击计算。
+##### 1）运行keytool命令
+```
+keytool -exportcert -alias 'Nom Nom Eat' -keystore nomnom.jks |openssl sha1 -binary | openssl base64
+```
+注意事项：<br />
+1，使用上述命令请替换-alias 和 -keystore后面的部分，只需要替换这两处即可。<br />
+2，-alias后面跟的是自己的keystore新建时对应的alias，-keystore后面是签名的文件(jks或keystore格式）。
+
+##### 2）安装OauthSample工具
+输入你的应用包名如：com.aa.cc，点击计算按钮。
 
 SDK开发资料
 ===
